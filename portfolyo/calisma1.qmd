@@ -1,16 +1,212 @@
 ---
 title: "Çalışma 1"
+toc: true
+toc-location: left
+page-layout: article
 ---
 
-\
-(Aşağıdakiler örnek olarak verilmiştir.)
+## 3
 
-Bu çalışmada 3 görevimiz var. Bu görevler..... Bunlara sırayla aşağıda cevap arıyoruz.
+### a) Video Özeti
 
-## (a)
+**Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Mustafa Baydoğan & Erdi Daşdemir**
+
+Mustafa Baydoğan konuşmasına endüstri mühendisliğinin veri bilimine yakın bir alan olduğunu söylerek başlıyor. Endüstri mühendisliği problem çözme, sistemleri anlama, model kurma ve optimizasyon gibi konuları zaten içerdiğinden, veri bilimini de bu bakış açısının veriye dayalı bir uzatısı gibi görüyor.
+
+Ayrıca veri biliminin sadece tahmin yapmak değil, bu tahminleri kullanarak doğru kararlar almak olduğunu da belirtiyor. Örneğin bir mağazada stok miktarı yalnızca satış tahminiyle değil, optimizasyon ve karar verme süreciyle belirlenir.
+
+Bahsettiği kereste yamulma problemiyle de bize yalnızca veriye bakmanın yeterli olmadığını; önce problemin kaynağını anlamak gerektiğini anlatıyor. Sorunun temelinde kerestenin kesildiği bölüm ve yapısal özelliklerin olduğu belirlendikten sonra, bu etkenler görüntü işleme ve öznitelik çıkarımıyla sayısallaştırılarak bir tahmin modeline dönüştürülmüş ve çözüm sağlanmıştır.
+
+Konuşmasında geleneksel makine öğrenmesi (**traditional machine learning**) ile derin öğrenme (**deep learning**) arasındaki farklardan da bahsediyor. Derin öğrenmenin özellikle görüntü ve ses gibi yapısal olmayan verilerde (**unstructured data**) çok güçlü olduğunu kabul ederken her zaman en karmaşık modelin en iyi model olmadığını, bazı durumlarda daha basit ve açıklanabilir modellerin daha faydalı olabileceğini de vurguluyor (**explainability**).
+
+Anlattığı bir diğer önemli nokta da gerçek verilerin çoğu zaman temiz olmaması sebebiyle veriyi direkt kullanmak yerine önce anlamak gerektiği. Enerji sektörü örneğiyle de bunu destekleyerek, yalnızca geçmiş tüketim verilerinin değil; hava durumu ve özel günler gibi dış etkenlerin de tahminleri etkilediğini ifade ediyor.
+
+Online alışverişte ürünlerin gösterim sırasının satışları etkilediğini, yani sistemin kararlarıyla yeni veri oluşturduğunu söylüyor. Bu yüzden bazı durumlarda pekiştirmeli öğrenme daha önemli hale gelebilmektedir (**reinforcement learning**).
+
+Videonun sonunda betimleyici analitik (**descriptive analytics**), tahmine dayalı analitik (**predictive analytics**) ve yönlendirici / reçeteleyici analitik (**prescriptive analytics**) arasındaki farklara değiniyor. Öğrencilere sadece video izleyerek ya da kurs tamamlayarak değil, gerçek problemler üzerinde çalışarak veri bilimini öğrenebileceklerini söylüyor. Başlangıç için de *An Introduction to Statistical Learning* kitabını tavsiye ediyor .
+
+Mustafa Baydoğan'ın bu konuşması, veri biliminin sadece model kurmak ya da algoritma kullanmak olmadığını açıkça gösteriyor. Asıl önemli olan; problemi anlamak, veriyi doğru yorumlamak ve elde edilen sonuçları etkili kararlara dönüştürebilmektir.
+
+### b) Sorular ve Cevaplar
+
+**Çoktan Seçmeli Soru:**
+
+Aşağıdakilerden hangisi veri biliminin temel işlevini en doğru şekilde açıklar?
+
+**A)** Verilerden yararlanarak yalnızca geleceğe ilişkin tahminlerde bulunmak\
+**B)** Büyük veri kümelerini işleyerek teknik analizler üretmek\
+**C)** Veriden anlam çıkarma, model geliştirme ve bu çıktıları karar süreçlerine dönüştürme\
+**D)** Her problem için en gelişmiş makine öğrenmesi yöntemini seçmek\
+**E)** Sayısal veriler üzerinde istatistiksel işlem uygulamak
+
+*(Doğru cevap: C)*
+
+**Açık Uçlu Soru:**
+
+Veri analizi projelerinde yalnızca yüksek tahmin doğruluğunun neden yeterli olmadığını açıklayınız.
+
+*(Cevap: Veri bilimi projelerinde yalnızca yüksek tahmin doğruluğu yeterli olmaz. Çünkü önemli olan sadece geleceği tahmin etmek değil, bu tahmini kullanarak doğru karar verebilmektir. Ayrıca iş hayatında modelin açıklanabilirliği önemlidir; bu yüzden bazen daha basit ve yorumlanabilir modeller daha faydalı olabilir. Bunun yanında gerçek veriler her zaman temiz ve eksiksiz değildir. Veri hatalı ya da eksik olduğunda yüksek doğruluk yanıltıcı olabilir. Son olarak bir modelin asıl değeri, tahminin envanter, fiyatlama, enerji yönetimi gibi karar süreçlerinde kullanılabilmesidir.)*\
+
+## 4
+
+a)  Veri Setinin İçe Aktarılması ve Değişkenlerin Tanımlanması
 
 ```{r}
-1 + 1
+library(dslabs)
+library(dplyr)
+library(knitr)
+library(kableExtra)
+
+data("polls_us_election_2016")
+df <- polls_us_election_2016
+
+my_first <- "Nihal"
+my_birth_year <- 1996
+
+k <- (nchar(my_first) + my_birth_year) %% 15 + 8
+k
 ```
 
-## (b)
+b)  k Değerine Göre Orijinal Veri Setinden Satırların Gösterilmesi
+
+```{r}
+if (k %% 2 == 0) {
+  table_data <- head(df, k)
+} else {
+  table_data <- tail(df, k)
+}
+
+knitr::kable(table_data, caption = "Orijinal veri seti icerisinde k adet satir") %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE,
+    font_size = 10,
+    position = "left"
+  ) %>%
+  scroll_box(width = "100%", height = "450px")
+```
+
+c)  Orijinal Veri Setindeki NA Değerlerinin Analizi
+
+Toplam NA Sayısı
+
+```{r}
+total_na <- data.frame(
+  Metrik = "Toplam NA Sayisi",
+  Deger = sum(is.na(df))
+)
+
+knitr::kable(total_na, caption = "Orijinal Veri Setindeki Toplam NA Sayisi") %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE,
+    font_size = 10,
+    position = "left"
+  )
+```
+
+Sütun Başına NA Sayısı (İlk 8)
+
+```{r}
+na_counts <- colSums(is.na(df))
+na_counts_sorted <- sort(na_counts, decreasing = TRUE)
+
+na_table <- data.frame(
+  Degisken = names(head(na_counts_sorted, 8)),
+  NA_Sayisi = as.vector(head(na_counts_sorted, 8))
+)
+
+knitr::kable(
+  na_table,
+  caption = "Sutun Basina NA Sayisi (Ilk 8)",
+  align = c("l", "c")
+) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE,
+    font_size = 10,
+    position = "left"
+  ) %>%
+  column_spec(1, width = "18em") %>%
+  column_spec(2, width = "7em")
+```
+
+d)  NA Değerlerinin Yeni Veri Çerçevesinde Değiştirilmesi
+
+```{r}
+new_data <- df
+
+for (col_name in names(new_data)) {
+  if (is.numeric(new_data[[col_name]])) {
+    new_data[[col_name]][is.na(new_data[[col_name]])] <- my_birth_year + k
+    
+  } else if (is.factor(new_data[[col_name]])) {
+    new_data[[col_name]] <- as.character(new_data[[col_name]])
+    new_data[[col_name]][is.na(new_data[[col_name]])] <- paste0(my_first, "_", k)
+    
+  } else if (is.character(new_data[[col_name]])) {
+    new_data[[col_name]][is.na(new_data[[col_name]])] <- paste0(my_first, "_", k)
+  }
+}
+```
+
+e)  Yeni Veri Çerçevesinin Kontrolü
+
+k Değerine Göre Satırların Gösterilmesi
+
+```{r}
+if (k %% 2 == 0) {
+  table_data <- head(new_data, k)
+} else {
+  table_data <- tail(new_data, k)
+}
+
+knitr::kable(table_data, caption = "Yeni veri cercevesi icerisinde k adet satir") %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE,
+    font_size = 10,
+    position = "left"
+  ) %>%
+  scroll_box(width = "100%", height = "450px")
+```
+
+Yeni Veri Çerçevesindeki Toplam NA Sayısı
+
+```{r}
+new_total_na <- data.frame(
+  Metrik = "Yeni veri cercevesindeki toplam NA sayisi",
+  Deger = sum(is.na(new_data))
+)
+
+knitr::kable(new_total_na, caption = "Yeni Veri Cercevesindeki Toplam NA Sayisi") %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE,
+    font_size = 10,
+    position = "left"
+  )
+```
+
+anyNA(new_data) Sonucu
+
+```{r}
+any_na_result <- data.frame(
+  Kontrol = "anyNA(new_data)",
+  Sonuc = anyNA(new_data)
+)
+
+knitr::kable(any_na_result, caption = "Yeni Veri Cercevesinde NA Kontrolu") %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE,
+    font_size = 10,
+    position = "left"
+  )
+```
+
+## Not
+
+Bu ödev hazırlanırken, teknik sorunların çözümü ve kodların düzenlenmesi için yapay zeka desteğinden yararlanılmıştır. Yapay zeka özellikle R kodlarının düzeltilmesi, NA değerlerinin işlenmesi, tablo çıktılarının daha düzenli hale getirilmesi, Quarto belge yapısının toparlanması ve web sayfasındaki görünümün iyileştirilmesi aşamalarında yardımcı olmuştur.
+
+Destek sürecinde; veri setinden k değerine göre satır seçme, eksik verileri analiz etme, yeni veri çerçevesi oluşturma, factor kaynaklı hataları önleme, kable ile tablo biçimlendirme ve CSS düzenlemeleri gibi konularda öneriler alınmıştır. Nihai seçimler, düzenlemeler ve ödevin son hali tarafımdan oluşturulmuştur.

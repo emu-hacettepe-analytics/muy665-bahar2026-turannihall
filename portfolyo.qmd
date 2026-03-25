@@ -1,5 +1,91 @@
 ---
 title: "Portfolyo"
+toc: false
+sidebar: false
+page-layout: full
 ---
 
-Bu sayfada, MUY665 İş Analitiği dersi 2025-2026 bahar dönemi boyunca yaptığım analitik çalışmalarımı sunmaktayım. Çalışmalarıma sol menüden ulaşabilirsiniz.
+<style>
+.feature-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.feature-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.feature-card {
+  background: #ffffff;
+  border: 1px solid #dbe3f0;
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  height: 100%;
+}
+
+.feature-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #3f4f6f;
+  margin-bottom: 0.8rem;
+}
+
+.feature-text {
+  color: #5b6577;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.feature-link {
+  color: #6b84c4;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.feature-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .feature-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+Bu sayfada, **MUY665 - İş Analitiği** dersi kapsamında hazırladığım çalışmalar yer almaktadır.
+
+Aşağıda her çalışmaya ilişkin kısa açıklamalar ve ilgili sayfalara yönlendirme bağlantıları bulunmaktadır.
+
+## Çalışmalar
+
+:::::::::: {.feature-grid .feature-grid-2}
+::::: {.feature-card}
+::: {.feature-title}
+Çalışma 1
+:::
+
+::: {.feature-text}
+Veri setinin incelenmesi, eksik verilerin analizi ve yeni veri çerçevesi oluşturulmasına yönelik uygulama.
+:::
+
+<a class="feature-link" href="./portfolyo/calisma1.html">İncele</a>
+:::::
+
+::::: {.feature-card}
+::: {.feature-title}
+Çalışma 2
+:::
+
+::: {.feature-text}
+Ders kapsamında hazırlanan ikinci çalışmaya ait analiz süreci ve uygulama adımları.
+:::
+
+<a class="feature-link" href="./portfolyo/calisma2.html">İncele</a>
+:::::
+::::::::::

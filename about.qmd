@@ -1,40 +1,141 @@
 ---
-title: "Hakkımda"
-sidebar: false 
+title: "About"
+sidebar: false
+toc: false
+page-layout: full
+format:
+  html:
+    css: styles.css
+    theme: cosmo
 ---
 
-![](assets/images/vesikalik.jpeg){fig-align="center"}
+**Nihal Turan**
 
-# Eğitim
+::: role-line
+Civil Engineer \| Test Engineer \| M.S. in Engineering Management
+:::
 
--   B.S., ................................., ....................................University, Turkey, 20xx - 20xx.
--   M.S., Industrial Engineering, Hacettepe University, Turkey, 20xx - ongoing.
--   Ph.D.., Industrial Engineering, Hacettepe University, Turkey, 20xx - ongoing.
+::: intro-block
+I am a civil engineer currently working as a Test Engineer at ENA Tower Testing Station under MİTAŞ Group. This website presents my work for the MUY665 Business Analytics course, together with my academic background and professional experience.
+:::
 
-# İş Tecrübesi
+::: action-links
+<a class="action-button" href="Nihal_Turan_CV.pdf" target="_blank">Download CV</a> <a class="action-button secondary" href="https://www.linkedin.com/in/nihal-turan-7606781b9" target="_blank">LinkedIn</a>
+:::
 
-## Employements
+:::::::::::::::::::::::::::::: columns-layout
+:::::::: left-column
+::: section-box
+## Profile
 
-1.  Firm xxx, position xx, year xxx
+Civil engineer with three years of experience as a Test Engineer at ENA Tower Testing Station, working at the field–office interface in Türkiye’s first and only tower testing facility. Experienced in test operations, reporting, process improvement, and technical problem-solving.
+:::
 
-2.  Firm yyy, position yyy, year yyy
+::: section-box
+## Technical Skills
+
+-   **Engineering Software:** AutoCAD, Tekla, SolidWorks, PLS Tower\
+-   **Project & Planning:** Primavera, MS Project\
+-   **Business Tools:** SAP, MS Office
+:::
+
+::: section-box
+## Certifications
+
+-   Project Planning and Control with Primavera P6, AKIM Engineering
+:::
+
+::: section-box
+## Languages
+
+-   English\
+-   German
+:::
+
+::: section-box
+## Interests
+
+-   Volleyball\
+-   Pilates\
+-   Stained Glass Art
+:::
+::::::::
+
+::::::::::::::::::::::: right-column
+## Education
+
+:::::: entry-block
+::: entry-title
+B.S. in Civil Engineering
+:::
+
+::: entry-subtitle
+Çankaya University
+:::
+
+::: entry-date
+2016 – 2021
+:::
+::::::
+
+:::::: entry-block
+::: entry-title
+M.S. in Engineering Management
+:::
+
+::: entry-subtitle
+Hacettepe University
+:::
+
+::: entry-date
+2026 – Present
+:::
+::::::
+
+## Experience
+
+:::::: entry-block
+::: entry-title
+Test Engineer
+:::
+
+::: entry-subtitle
+ENA Tower Testing Station, MİTAŞ Group
+:::
+
+::: entry-date
+2022 – Present
+:::
+::::::
 
 ## Internships
 
-1.  Firm aaa, position xx, year xxx
+:::::: entry-block
+::: entry-title
+Intern Civil Engineer
+:::
 
-2.  Firm bbb, position yyy, year yyy
+::: entry-subtitle
+DSI New Building, Siyahkalem Engineering
+:::
 
-# Projects
+::: entry-date
+2020
+:::
+::::::
 
-1.  TUBİTAK 1001..........................
+:::::: entry-block
+::: entry-title
+Intern Civil Engineer
+:::
 
-# Publications
+::: entry-subtitle
+Merkez Ankara Project, Pasifik Construction
+:::
 
-1.  Dasdemir, E., Batta, R., Koksalan, M., Tezcaner Ozturk, D. (2022) “UAV Routing for Reconnaissance Mission: A Multi-Objective Orienteering Problem with Time-Dependent Prizes and Multiple Connections”, Computers & Operations Research, 145: 105882.
-
-# Competencies
-
-R, Quarto, Git, Python
-
-# Hobbies
+::: entry-date
+2019
+:::
+::::::
+:::::::::::::::::::::::
+::::::::::::::::::::::::::::::
